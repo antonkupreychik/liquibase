@@ -1,0 +1,41 @@
+plugins {
+    id 'java'
+    id 'org.liquibase.gradle' version '2.0.4'
+}
+
+group = 'com'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    implementation 'org.liquibase:liquibase-core:4.19.0'
+    implementation 'org.postgresql:postgresql:42.5.1'
+
+    liquibaseRuntime 'org.liquibase:liquibase-core:4.19.0'
+    liquibaseRuntime 'org.liquibase:liquibase-groovy-dsl:3.0.2'
+    liquibaseRuntime 'org.postgresql:postgresql:42.5.1'
+    liquibaseRuntime 'com.fasterxml.jackson.core:jackson-databind:2.14.1'
+
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+apply plugin: "org.liquibase.gradle"
+
+liquibase {
+    activities {
+        main {
+            changelogFile '/db/core/changelog.xml'
+            url 'jdbc:postgresql://localhost:5432/liquibase'
+            username 'anton'
+            password 'anton'
+        }
+    }
+}
+
+test {
+    useJUnitPlatform()
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.2.xsd">
+
+
+    <changeSet id="MOTO-3-1" author="Alexander Kozlov">
+       <sql>
+           INSERT INTO news (id, title, content, created_date) VALUES (2, 'asda', 'asd', '2024-04-11 22:21:54.000000');
+       </sql>
+    </changeSet>
+
+</databaseChangeLog>
