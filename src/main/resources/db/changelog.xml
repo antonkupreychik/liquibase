@@ -4,7 +4,6 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-    <include file="scripts/MOTO-1.xml" relativeToChangelogFile="true"/>
-    <include file="scripts/MOTO-2.xml" relativeToChangelogFile="true"/>
-    <include file="scripts/MOTO-3.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/create_tags.sql" relativeToChangelogFile="true"/>
+    <include file="changelog/create_tasks.sql" relativeToChangelogFile="true"/>
 </databaseChangeLog>
